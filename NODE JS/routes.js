@@ -43,4 +43,4 @@ const requestHandler = (req, res) => {
 // }
 
 exports.handler = requestHandler;
-exports.anyText = "My name is sb";
+exports.anyText = "This is hard coded";
