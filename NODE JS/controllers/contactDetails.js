@@ -1,11 +1,18 @@
-const path = require('path');
-
-const rootDir = require('../utils/path');
 
 exports.contactPage =  (req,res) => {
-    res.sendFile(path.join(rootDir, 'views', 'contactUs.html'));
+    res.render('contactUs', {
+        pageTitle: 'Contact Us',
+        path: '/contactus',
+        formsCSS: true,
+        productCSS: true
+      });
 };
 
 exports.successPage =  (req,res) => {
-    res.sendFile(path.join(rootDir, 'views', 'success.html'));
+    res.render('success', {
+        pageTitle: 'Success Page',
+        path: '/success',
+        formsCSS: true,
+        productCSS: true
+      });
 };
