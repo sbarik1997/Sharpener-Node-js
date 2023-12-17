@@ -14,11 +14,15 @@ const fileProducts = (cb) => {
 }
 
 module.exports = class Product{
-    constructor(t){
-        this.title = t
+    constructor(title, imageUrl, description, price){
+        this.title = title;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.price = price;
     }
 
     save(){
+        this.id = Math.random().toString();
         fileProducts(products => {
             products.push(this);
 
@@ -30,5 +34,12 @@ module.exports = class Product{
 
     static fetchAll(cb){
         fileProducts(cb);
+    }
+
+    static findById(id, cb){
+        fileProducts(products => {
+            const product = products.find(p => p.id === id);
+            cb(product);
+        })
     }
 }
