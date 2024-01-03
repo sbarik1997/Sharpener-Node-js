@@ -18,7 +18,9 @@ exports.postAddProduct = (req, res, next) => {
   .then(() => {
     res.redirect('/');
   })
-  .catch(err => console.log(err))
+  .catch(err => {
+    console.log(err);
+  })
 };
 
 exports.getEditProduct = (req, res, next) => {
